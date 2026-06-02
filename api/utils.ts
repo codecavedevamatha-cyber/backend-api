@@ -1,11 +1,16 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import { redis } from "./redis";
 
-const allowedHosts = ["devamathacollege.ac.in", "www.devamathacollege.ac.in"];
+const allowedHosts = [
+  "devamathacollege.ac.in",
+  "www.devamathacollege.ac.in",
+  "localhost",
+];
 
 const allowedOrigins = [
   "https://devamathacollege.ac.in",
   "https://www.devamathacollege.ac.in",
+  "http://localhost"
 ];
 
 export async function validateRequest(
