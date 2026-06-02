@@ -42,7 +42,7 @@ export async function validateRequest(
 
     const currentCount = Number(await redis.get(`rate:${ip}`)) || 0;
 
-    if (currentCount >= 5) {
+    if (currentCount >= 10) {
       res.status(429).json({
         error: "Too many requests. Please try again later.",
       });
