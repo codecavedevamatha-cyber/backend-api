@@ -7,7 +7,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     const data = await resend.emails.send({
       from: "dmc@devamathacollege.ac.in",
-      to: "dmc@devamathacollege.ac.in",
+      to: ["dmc@devamathacollege.ac.in", "codecavedevamatha@gmail.com"],
       subject: "Test Email from Vercel",
       html: "<h1>Email system is working!</h1>",
     });
