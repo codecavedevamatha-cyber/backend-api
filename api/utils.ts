@@ -10,7 +10,8 @@ const allowedHosts = [
 const allowedOrigins = [
   "https://devamathacollege.ac.in",
   "https://www.devamathacollege.ac.in",
-  "http://localhost"
+  "http://localhost",
+  "http://localhost:8081",
 ];
 
 export async function validateRequest(
