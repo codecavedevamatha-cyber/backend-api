@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@upstash/redis": "^1.38.0",
+    "axios": "^1.16.1",
     "resend": "^6.12.4",
     "vercel": "^54.7.1"
   }
