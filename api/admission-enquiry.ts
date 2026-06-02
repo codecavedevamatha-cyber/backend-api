@@ -1,6 +1,6 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import { Resend } from "resend";
-import { validateRequest } from "./utils";
+import { toMails, validateRequest } from "./utils";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -19,7 +19,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
      return res.status(200).end();
    }
 
-   
+
   if (req.method !== "POST") {
     return res.status(405).json({
       error: "Method not allowed",
@@ -47,7 +47,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const result = await resend.emails.send({
       from: "dmc@devamathacollege.ac.in",
-      to: "dmc@devamathacollege.ac.in",
+      to: toMails,
       subject: `New Admission Enquiry - ${name}`,
       html: `
         <h2>New Admission Enquiry</h2>

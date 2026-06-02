@@ -7,6 +7,9 @@ const allowedHosts = [
   "localhost",
 ];
 
+export const toMails = [
+  "codecavedevamatha@gmail.com"
+]
 const allowedOrigins = [
   "https://devamathacollege.ac.in",
   "https://www.devamathacollege.ac.in",

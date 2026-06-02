@@ -1,6 +1,6 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import { Resend } from "resend";
-import { validateRequest } from "./utils";
+import { toMails, validateRequest } from "./utils";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -44,7 +44,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const result = await resend.emails.send({
       from: "dmc@devamathacollege.ac.in",
-      to: "dmc@devamathacollege.ac.in",
+      to: toMails,
       subject: `New Alumni Registration - ${name}`,
       html: `
         <h2>New Alumni Registration</h2>
